@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model package="paypanel" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" phpdoc-package="paypanel" version="1.1">
+    <object class="PayPanelHosting" table="paypanel_hosting" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="hdd" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="domains" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="db" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="ftp" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="price" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="price_partner" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="percent" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="advance" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="active" dbtype="tinyint" precision="1" phptype="integer" null="false" default="1" />
+
+        <index alias="name" name="name" primary="false" unique="false" type="BTREE" >
+            <column key="name" length="" collation="A" null="false" />
+        </index>
+        <index alias="active" name="active" primary="false" unique="false" type="BTREE" >
+            <column key="active" length="" collation="A" null="true" />
+        </index>
+    </object>
+    <object class="PayPanelVds" table="paypanel_vds" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="processor" dbtype="int" precision="11" phptype="integer" null="false" />
+        <field key="memory" dbtype="int" precision="11" phptype="integer" null="false" />
+        <field key="hdd" dbtype="int" precision="11" phptype="integer" null="false" />
+        <field key="trafic" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="support" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="ipv4" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="ipv6" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="ipmax" dbtype="int" precision="11" phptype="integer" null="false" />
+        <field key="dns" dbtype="int" precision="11" phptype="integer" null="false" />
+        <field key="backup" dbtype="int" precision="11" phptype="integer" null="false" />
+        <field key="price" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="price_partner" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="percent" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="advance" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="active" dbtype="tinyint" precision="1" phptype="integer" null="false" default="1" />
+
+        <index alias="name" name="name" primary="false" unique="false" type="BTREE" >
+            <column key="name" length="" collation="A" null="false" />
+        </index>
+        <index alias="active" name="active" primary="false" unique="false" type="BTREE" >
+            <column key="active" length="" collation="A" null="true" />
+        </index>
+    </object>
+    <object class="PayPanelServer" table="paypanel_servers" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="processor" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="memory" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="hdd" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="virtualisation" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="os" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="price" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="price_partner" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="percent" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="advance" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="active" dbtype="tinyint" precision="1" phptype="integer" null="false" default="1" />
+
+        <index alias="name" name="name" primary="false" unique="false" type="BTREE" >
+            <column key="name" length="" collation="A" null="false" />
+        </index>
+        <index alias="active" name="active" primary="false" unique="false" type="BTREE" >
+            <column key="active" length="" collation="A" null="true" />
+        </index>
+    </object>
+    <object class="PayPanelDomain" table="paypanel_domains" extends="xPDOSimpleObject">
+        <field key="zone" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="domain" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="whois" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="idn" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="groups" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="popular" dbtype="int" precision="11" phptype="integer" null="false" />
+        <field key="min" dbtype="int" precision="11" phptype="integer" null="false" />
+        <field key="max" dbtype="int" precision="11" phptype="integer" null="false" />
+        <field key="price" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="price_partner" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="percent" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="advance" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="active" dbtype="tinyint" precision="1" phptype="integer" null="false" default="1" />
+
+        <index alias="zone" name="zone" primary="false" unique="false" type="BTREE" >
+            <column key="zone" length="" collation="A" null="false" />
+        </index>
+        <index alias="active" name="active" primary="false" unique="false" type="BTREE" >
+            <column key="active" length="" collation="A" null="true" />
+        </index>
+    </object>
+    <object class="PayPanelSsl" table="paypanel_ssl" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="logo" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="options" dbtype="set" precision="'D','D+O','IDN','EV','WC','SGC'" phptype="string" null="false" />
+        <field key="company" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="period" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="price" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="price_partner" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="percent" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="advance" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="active" dbtype="tinyint" precision="4" phptype="integer" null="false" default="1" />
+
+        <index alias="name" name="name" primary="false" unique="false" type="BTREE" >
+            <column key="name" length="" collation="A" null="false" />
+        </index>
+        <index alias="active" name="active" primary="false" unique="false" type="BTREE" >
+            <column key="active" length="" collation="A" null="true" />
+        </index>
+    </object>
+    <object class="PayPanelLicense" table="paypanel_licenses" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="period" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="price" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="price_partner" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="percent" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="advance" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="active" dbtype="tinyint" precision="1" phptype="integer" null="false" default="1" />
+
+        <index alias="name" name="name" primary="false" unique="false" type="BTREE" >
+            <column key="name" length="" collation="A" null="false" />
+        </index>
+        <index alias="active" name="active" primary="false" unique="false" type="BTREE" >
+            <column key="active" length="" collation="A" null="true" />
+        </index>
+    </object>
+</model>

@@ -1,0 +1,7 @@
+Changelog for PayPanel.
+
+1.0.0-pl
+==============
+- Integration REG.RU
+- Integration TheSSLStore.com
+- Integration ISPmanager
