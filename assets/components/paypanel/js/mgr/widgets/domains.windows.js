@@ -43,7 +43,7 @@ Ext.extend(PayPanel.window.CreateDomain, MODx.Window, {
             anchor: '99%',
             allowBlank: true,
         }, {
-            xtype: 'modx-combo-boolean',
+            xtype: 'xcheckbox',
             fieldLabel: _('paypanel_domain_idn'),
             name: 'idn',
             id: config.id + '-idn',
@@ -55,7 +55,7 @@ Ext.extend(PayPanel.window.CreateDomain, MODx.Window, {
             anchor: '99%',
             allowBlank: true,
         }, {
-            xtype: 'modx-combo-boolean',
+            xtype: 'xcheckbox',
             fieldLabel: _('paypanel_domain_popular'),
             name: 'popular',
             id: config.id + '-popular',
@@ -175,7 +175,7 @@ Ext.extend(PayPanel.window.UpdateDomain, MODx.Window, {
             anchor: '99%',
             allowBlank: true,
         }, {
-            xtype: 'modx-combo-boolean',
+            xtype: 'xcheckbox',
             fieldLabel: _('paypanel_domain_idn'),
             name: 'idn',
             id: config.id + '-idn',
@@ -187,7 +187,7 @@ Ext.extend(PayPanel.window.UpdateDomain, MODx.Window, {
             anchor: '99%',
             allowBlank: true,
         }, {
-            xtype: 'modx-combo-boolean',
+            xtype: 'xcheckbox',
             fieldLabel: _('paypanel_domain_popular'),
             name: 'popular',
             id: config.id + '-popular',

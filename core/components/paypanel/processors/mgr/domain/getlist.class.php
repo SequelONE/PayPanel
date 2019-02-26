@@ -5,7 +5,7 @@ class PayPanelDomainGetListProcessor extends modObjectGetListProcessor
     public $objectType = 'PayPanelDomain';
     public $classKey = 'PayPanelDomain';
     public $defaultSortField = 'id';
-    public $defaultSortDirection = 'DESC';
+    public $defaultSortDirection = 'ASC';
     //public $permission = 'list';
 
 

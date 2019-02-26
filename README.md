@@ -11,3 +11,9 @@ Import and Export prices for MODX Revolution 2.*
 * TheSSLStore.com
 
 and others
+
+### Cron
+
+```
+/core/components/paypanel/cron/regru.php
+```

@@ -182,7 +182,7 @@ Ext.extend(PayPanel.grid.Domains, MODx.grid.Grid, {
     },
 
     getFields: function () {
-        return ['id', 'zone', 'domain', 'idn', 'category', 'price', 'price_retail', 'price_partner', 'percent', 'advance', 'active', 'actions'];
+        return ['id', 'zone', 'domain', 'idn', 'popular', 'category', 'price', 'price_retail', 'price_partner', 'percent', 'advance', 'active', 'actions'];
     },
 
     getColumns: function () {
@@ -204,11 +204,6 @@ Ext.extend(PayPanel.grid.Domains, MODx.grid.Grid, {
         }, {
             header: _('paypanel_domain_groups'),
             dataIndex: 'category',
-            sortable: true,
-            width: 100,
-        }, {
-            header: _('paypanel_domain_idn'),
-            dataIndex: 'idn',
             sortable: true,
             width: 100,
         }, {
@@ -234,6 +229,18 @@ Ext.extend(PayPanel.grid.Domains, MODx.grid.Grid, {
         }, {
             header: _('paypanel_domain_advance'),
             dataIndex: 'advance',
+            sortable: true,
+            width: 100,
+        }, {
+            header: _('paypanel_domain_idn'),
+            dataIndex: 'idn',
+            renderer: PayPanel.utils.renderBoolean,
+            sortable: true,
+            width: 100,
+        }, {
+            header: _('paypanel_domain_popular'),
+            dataIndex: 'popular',
+            renderer: PayPanel.utils.renderBoolean,
             sortable: true,
             width: 100,
         }, {
