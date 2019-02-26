@@ -13,9 +13,16 @@ class PayPanelHomeManagerController extends modExtraManagerController
     /**
      *
      */
-    public function initialize()
-    {
+
+    public function initialize() {
         $this->PayPanel = $this->modx->getService('PayPanel', 'PayPanel', MODX_CORE_PATH . 'components/paypanel/model/');
+
+        if (!include_once MODX_CORE_PATH . 'components/minishop2/model/minishop2/minishop2.class.php') {
+            throw new Exception('You must install miniShop2 first');
+        }
+
+        $this->miniShop2 = new miniShop2($this->modx);
+
         parent::initialize();
     }
 
@@ -53,6 +60,13 @@ class PayPanelHomeManagerController extends modExtraManagerController
     public function loadCustomCssJs()
     {
         $this->addCss($this->PayPanel->config['cssUrl'] . 'mgr/main.css');
+
+        $this->addJavascript(MODX_MANAGER_URL . 'assets/modext/util/datetime.js');
+
+        $this->addJavascript($this->miniShop2->config['jsUrl'] . 'mgr/minishop2.js');
+        $this->addJavascript($this->miniShop2->config['jsUrl'] . 'mgr/misc/ms2.utils.js');
+        $this->addJavascript($this->miniShop2->config['jsUrl'] . 'mgr/misc/ms2.combo.js');
+
         $this->addJavascript($this->PayPanel->config['jsUrl'] . 'mgr/paypanel.js');
         $this->addJavascript($this->PayPanel->config['jsUrl'] . 'mgr/misc/utils.js');
         $this->addJavascript($this->PayPanel->config['jsUrl'] . 'mgr/misc/combo.js');

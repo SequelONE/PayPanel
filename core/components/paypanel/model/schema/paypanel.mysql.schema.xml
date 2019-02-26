@@ -73,10 +73,11 @@
         <field key="popular" dbtype="int" precision="11" phptype="integer" null="false" />
         <field key="min" dbtype="int" precision="11" phptype="integer" null="false" />
         <field key="max" dbtype="int" precision="11" phptype="integer" null="false" />
-        <field key="price" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="price_retail" dbtype="varchar" precision="255" phptype="string" null="false" />
         <field key="price_partner" dbtype="varchar" precision="255" phptype="string" null="false" />
         <field key="percent" dbtype="varchar" precision="255" phptype="string" null="false" />
         <field key="advance" dbtype="varchar" precision="255" phptype="string" null="false" />
+        <field key="price" dbtype="varchar" precision="255" phptype="string" null="false" />
         <field key="active" dbtype="tinyint" precision="1" phptype="integer" null="false" default="1" />
 
         <index alias="zone" name="zone" primary="false" unique="false" type="BTREE" >

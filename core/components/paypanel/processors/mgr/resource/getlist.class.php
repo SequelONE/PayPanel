@@ -33,11 +33,6 @@ class PayPanelDomainGetListProcessor extends modObjectGetListProcessor
     public function prepareQueryBeforeCount(xPDOQuery $c)
     {
         $query = trim($this->getProperty('query'));
-
-        $c->leftJoin('msCategory', 'msCategory', 'msCategory.id = PayPanelDomain.groups');
-        $c->select(array($this->modx->getSelectColumns('PayPanelDomain', 'PayPanelDomain')));
-        $c->select(array('msCategory.pagetitle as category'));
-
         if ($query) {
             $c->where([
                 'zone:LIKE' => '%'.$query.'%',

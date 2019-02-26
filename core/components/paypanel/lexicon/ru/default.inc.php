@@ -125,8 +125,9 @@ $_lang['paypanel_domain_popular'] = 'Популярный';
 $_lang['paypanel_domain_min'] = 'Мин. период';
 $_lang['paypanel_domain_max'] = 'Макс. период';
 $_lang['paypanel_domain_price'] = 'Цена';
+$_lang['paypanel_domain_price_retail'] = 'Розничная цена';
 $_lang['paypanel_domain_price_partner'] = 'Партнерская цена';
-$_lang['paypanel_domain_percent'] = 'Процент';
+$_lang['paypanel_domain_percent'] = 'Процент %';
 $_lang['paypanel_domain_advance'] = 'Наценка';
 
 $_lang['paypanel_domain_create'] = 'Создать услугу';

@@ -9,6 +9,10 @@ $_lang['setting_paypanel_api_regru_password'] = 'Пароль';
 $_lang['setting_paypanel_api_regru_password_desc'] = 'Пароль от вашей учётной записи в REG.RU';
 $_lang['setting_paypanel_api_regru_format'] = 'Формат';
 $_lang['setting_paypanel_api_regru_format_desc'] = 'Формат получения данных. По-умолчанию: XML';
+$_lang['setting_paypanel_api_regru_currency'] = 'Курс валюты';
+$_lang['setting_paypanel_api_regru_currency_desc'] = 'Курс для получения цен. По-умолчанию: EUR';
+$_lang['setting_paypanel_api_regru_url'] = 'API URL';
+$_lang['setting_paypanel_api_regru_url_desc'] = 'URL для получения данных с API.';
 
 $_lang['area_paypanel_api_thesslstore'] = 'API THESSLSTORE.COM';
 

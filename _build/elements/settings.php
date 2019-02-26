@@ -26,6 +26,16 @@ return [
         'value' => 'json',
         'area' => 'paypanel_api_regru',
     ],
+    'api_regru_currency' => [
+        'xtype' => 'textfield',
+        'value' => 'EUR',
+        'area' => 'paypanel_api_regru',
+    ],
+    'api_regru_url' => [
+        'xtype' => 'textfield',
+        'value' => 'https://api.reg.ru/api/regru2/',
+        'area' => 'paypanel_api_regru',
+    ],
     'api_thesslstore_username' => [
         'xtype' => 'textfield',
         'value' => '',

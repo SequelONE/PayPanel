@@ -50,14 +50,12 @@ Ext.extend(PayPanel.window.CreateDomain, MODx.Window, {
             anchor: '99%',
             allowBlank: true,
         }, {
-            xtype: 'textfield',
+            xtype: 'paypanel-combo-category',
             fieldLabel: _('paypanel_domain_groups'),
-            name: 'groups',
-            id: config.id + '-groups',
             anchor: '99%',
             allowBlank: true,
         }, {
-            xtype: 'textfield',
+            xtype: 'modx-combo-boolean',
             fieldLabel: _('paypanel_domain_popular'),
             name: 'popular',
             id: config.id + '-popular',
@@ -82,6 +80,13 @@ Ext.extend(PayPanel.window.CreateDomain, MODx.Window, {
             fieldLabel: _('paypanel_domain_price'),
             name: 'price',
             id: config.id + '-price',
+            anchor: '99%',
+            allowBlank: true,
+        }, {
+            xtype: 'textfield',
+            fieldLabel: _('paypanel_domain_price_retail'),
+            name: 'price_retail',
+            id: config.id + '-price_retail',
             anchor: '99%',
             allowBlank: true,
         }, {
@@ -177,14 +182,12 @@ Ext.extend(PayPanel.window.UpdateDomain, MODx.Window, {
             anchor: '99%',
             allowBlank: true,
         }, {
-            xtype: 'textfield',
+            xtype: 'paypanel-combo-category',
             fieldLabel: _('paypanel_domain_groups'),
-            name: 'groups',
-            id: config.id + '-groups',
             anchor: '99%',
             allowBlank: true,
         }, {
-            xtype: 'textfield',
+            xtype: 'modx-combo-boolean',
             fieldLabel: _('paypanel_domain_popular'),
             name: 'popular',
             id: config.id + '-popular',
@@ -209,6 +212,13 @@ Ext.extend(PayPanel.window.UpdateDomain, MODx.Window, {
             fieldLabel: _('paypanel_domain_price'),
             name: 'price',
             id: config.id + '-price',
+            anchor: '99%',
+            allowBlank: true,
+        }, {
+            xtype: 'textfield',
+            fieldLabel: _('paypanel_domain_price_retail'),
+            name: 'price_retail',
+            id: config.id + '-price_retail',
             anchor: '99%',
             allowBlank: true,
         }, {
