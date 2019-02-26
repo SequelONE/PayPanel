@@ -194,11 +194,13 @@ Ext.extend(PayPanel.grid.Domains, MODx.grid.Grid, {
         }, {
             header: _('paypanel_domain_zone'),
             dataIndex: 'zone',
+            editor: { xtype: 'textfield' },
             sortable: true,
             width: 100,
         }, {
             header: _('paypanel_domain'),
             dataIndex: 'domain',
+            editor: { xtype: 'textfield' },
             sortable: true,
             width: 100,
         }, {
@@ -209,26 +211,31 @@ Ext.extend(PayPanel.grid.Domains, MODx.grid.Grid, {
         }, {
             header: _('paypanel_domain_price'),
             dataIndex: 'price',
+            editor: { xtype: 'textfield' },
             sortable: true,
             width: 100,
         }, {
             header: _('paypanel_domain_price_retail'),
             dataIndex: 'price_retail',
+            editor: { xtype: 'textfield' },
             sortable: true,
             width: 100,
         }, {
             header: _('paypanel_domain_price_partner'),
             dataIndex: 'price_partner',
+            editor: { xtype: 'textfield' },
             sortable: true,
             width: 100,
         }, {
             header: _('paypanel_domain_percent'),
             dataIndex: 'percent',
+            editor: { xtype: 'textfield' },
             sortable: true,
             width: 100,
         }, {
             header: _('paypanel_domain_advance'),
             dataIndex: 'advance',
+            editor: { xtype: 'textfield' },
             sortable: true,
             width: 100,
         }, {

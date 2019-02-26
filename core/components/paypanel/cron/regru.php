@@ -32,10 +32,10 @@ foreach ($prices as $zone => $data) {
     $reg_price = $data->reg_price;
     $retail_reg_price = $data->retail_reg_price;
 
-    $domain = str_replace(array('_', '-', '—', '  '), '', trim($zone));
+    $domain = str_replace(array('_', '-', '—', '  ', 'idn.'), '', trim($zone));
     $domain = '.'.$domain;
 
-    $procent = '20';
+    $procent = $modx->getOption('paypanel_api_regru_percent');
     $price_procent = $reg_price / 100 * $procent;
     $price_procent = preg_replace('/(\..{2}).*/', '$1', $price_procent);
     $price = $reg_price + $price_procent;
@@ -52,7 +52,7 @@ foreach ($prices as $zone => $data) {
     $object->set('whois', '');
     $object->set('idn', $idn);
     //$object->set('groups', '');
-    $object->set('popular', 0);
+    //$object->set('popular', 0);
     $object->set('min', $reg_min_period);
     $object->set('max', $reg_max_period);
     $object->set('price_retail', $retail_reg_price);

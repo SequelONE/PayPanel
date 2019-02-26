@@ -36,6 +36,11 @@ return [
         'value' => 'https://api.reg.ru/api/regru2/',
         'area' => 'paypanel_api_regru',
     ],
+    'api_regru_percent' => [
+        'xtype' => 'textfield',
+        'value' => '20',
+        'area' => 'paypanel_api_regru',
+    ],
     'api_thesslstore_username' => [
         'xtype' => 'textfield',
         'value' => '',

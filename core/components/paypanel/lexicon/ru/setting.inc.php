@@ -13,6 +13,8 @@ $_lang['setting_paypanel_api_regru_currency'] = 'Курс валюты';
 $_lang['setting_paypanel_api_regru_currency_desc'] = 'Курс для получения цен. По-умолчанию: EUR';
 $_lang['setting_paypanel_api_regru_url'] = 'API URL';
 $_lang['setting_paypanel_api_regru_url_desc'] = 'URL для получения данных с API.';
+$_lang['setting_paypanel_api_regru_percent'] = 'Наценка в %';
+$_lang['setting_paypanel_api_regru_percent_desc'] = 'Наценка цен в процентах. Применяется массово.';
 
 $_lang['area_paypanel_api_thesslstore'] = 'API THESSLSTORE.COM';
 

@@ -68,9 +68,9 @@
         <field key="zone" dbtype="varchar" precision="255" phptype="string" null="false" />
         <field key="domain" dbtype="varchar" precision="255" phptype="string" null="false" />
         <field key="whois" dbtype="varchar" precision="255" phptype="string" null="false" />
-        <field key="idn" dbtype="varchar" precision="255" phptype="string" null="false" />
-        <field key="groups" dbtype="varchar" precision="255" phptype="string" null="false" />
-        <field key="popular" dbtype="int" precision="11" phptype="integer" null="false" />
+        <field key="idn" dbtype="tinyint" precision="1" phptype="integer" null="false" default="0" />
+        <field key="groups" dbtype="int" precision="11" phptype="integer" null="false" />
+        <field key="popular" dbtype="tinyint" precision="1" phptype="integer" null="false" default="0" />
         <field key="min" dbtype="int" precision="11" phptype="integer" null="false" />
         <field key="max" dbtype="int" precision="11" phptype="integer" null="false" />
         <field key="price_retail" dbtype="varchar" precision="255" phptype="string" null="false" />

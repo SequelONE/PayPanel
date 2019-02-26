@@ -35,4 +35,18 @@ return [
             ],
         ],
     ],
+    'PayPanelWhois' => [
+        'file' => 'paypanelwhois',
+        'description' => 'Whois service for PayPanel.',
+        'properties' => [
+            'tplForm' => [
+                'type' => 'textfield',
+                'value' => 'tpl.PayPanel.Whois.form',
+            ],
+            'tpl' => [
+                'type' => 'textfield',
+                'value' => 'tpl.PayPanel.Whois.item',
+            ],
+        ],
+    ],
 ];
