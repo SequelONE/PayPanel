@@ -12,6 +12,8 @@ PayPanel.grid.Domains = function (config) {
         baseParams: {
             action: 'mgr/domain/getlist'
         },
+        save_action: 'mgr/domain/importapi',
+        autosave: true,
         listeners: {
             rowDblClick: function (grid, rowIndex, e) {
                 var row = grid.store.getAt(rowIndex);
@@ -181,6 +183,19 @@ Ext.extend(PayPanel.grid.Domains, MODx.grid.Grid, {
         })
     },
 
+    importApiDomain: function(response) {
+        Ext.Msg.confirm(
+            _('paypanel_action_download') || _('warning'),
+            _('paypanel_confirm_download'),
+            function(e) {
+                if (e == 'yes') {
+                    this.setAction('importapi', 'false', 0);
+                } else {
+                    this.fireEvent('cancel');
+                }
+            },this);
+    },
+
     getFields: function () {
         return ['id', 'zone', 'domain', 'idn', 'popular', 'category', 'price', 'price_retail', 'price_partner', 'percent', 'advance', 'active', 'actions'];
     },
@@ -213,7 +228,7 @@ Ext.extend(PayPanel.grid.Domains, MODx.grid.Grid, {
             dataIndex: 'price',
             editor: { xtype: 'textfield' },
             sortable: true,
-            width: 100,
+            width: 50,
         }, {
             header: _('paypanel_domain_price_retail'),
             dataIndex: 'price_retail',
@@ -243,7 +258,7 @@ Ext.extend(PayPanel.grid.Domains, MODx.grid.Grid, {
             dataIndex: 'idn',
             renderer: PayPanel.utils.renderBoolean,
             sortable: true,
-            width: 100,
+            width: 50,
         }, {
             header: _('paypanel_domain_popular'),
             dataIndex: 'popular',
@@ -255,7 +270,7 @@ Ext.extend(PayPanel.grid.Domains, MODx.grid.Grid, {
             dataIndex: 'active',
             renderer: PayPanel.utils.renderBoolean,
             sortable: true,
-            width: 100,
+            width: 50,
         }, {
             header: _('paypanel_grid_actions'),
             dataIndex: 'actions',
@@ -268,9 +283,48 @@ Ext.extend(PayPanel.grid.Domains, MODx.grid.Grid, {
 
     getTopBar: function () {
         return [{
-            text: '<i class="icon icon-plus"></i>&nbsp;' + _('paypanel_domain_create'),
-            handler: this.createDomain,
-            scope: this
+            text: '<i class="icon icon-cogs"></i> ',
+            menu: [{
+                text: '<i class="icon icon-download"></i> ' + _('paypanel_domain_import'),
+                cls: 'paypanel-cogs',
+                handler: this.importApiDomain,
+                scope: this
+            }, {
+                text: '<i class="icon icon-upload"></i> ' + _('paypanel_domain_update_prices'),
+                cls: 'paypanel-cogs',
+                handler: this.createDomain,
+                scope: this
+            }, '-', {
+                text: '<i class="icon icon-download"></i> ' + _('paypanel_domain_import_shop'),
+                cls: 'paypanel-cogs',
+                handler: this.createDomain,
+                scope: this
+            }, {
+                text: '<i class="icon icon-upload"></i> ' + _('paypanel_domain_update_minishop'),
+                cls: 'paypanel-cogs',
+                handler: this.createDomain,
+                scope: this
+            }, '-', {
+                text: '<i class="icon icon-plus"></i> ' + _('paypanel_domain_create'),
+                cls: 'paypanel-cogs',
+                handler: this.createDomain,
+                scope: this
+            }, {
+                text: '<i class="icon icon-trash-o red"></i> ' + _('paypanel_domain_remove'),
+                cls: 'paypanel-cogs',
+                handler: this.removeDomain,
+                scope: this
+            }, {
+                text: '<i class="icon icon-toggle-on green"></i> ' + _('paypanel_domain_active'),
+                cls: 'paypanel-cogs',
+                handler: this.enableDomain,
+                scope: this
+            }, {
+                text: '<i class="icon icon-toggle-off red"></i> ' + _('paypanel_domain_inactive'),
+                cls: 'paypanel-cogs',
+                handler: this.disableDomain,
+                scope: this
+            }]
         }, '->', {
             xtype: 'paypanel-field-search',
             width: 250,
@@ -307,6 +361,38 @@ Ext.extend(PayPanel.grid.Domains, MODx.grid.Grid, {
             }
         }
         return this.processEvent('click', e);
+    },
+
+    setAction: function(method, field, value) {
+        console.log("test");
+        var ids = this._getSelectedIds();
+        if (!ids.length && (field !== 'false')) {
+            return false;
+        }
+        MODx.Ajax.request({
+            url: PayPanel.config.connector_url,
+            params: {
+                action: 'mgr/domain/importapi',
+                method: method,
+                field_name: field,
+                field_value: value,
+                ids: Ext.util.JSON.encode(ids)
+            },
+            listeners: {
+                success: {
+                    fn: function() {
+                        this.refresh();
+                    },
+                    scope: this
+                },
+                failure: {
+                    fn: function(response) {
+                        MODx.msg.alert(_('error'), response.message);
+                    },
+                    scope: this
+                }
+            }
+        })
     },
 
     _getSelectedIds: function () {

@@ -15,6 +15,8 @@ $_lang['setting_paypanel_api_regru_url'] = 'API URL';
 $_lang['setting_paypanel_api_regru_url_desc'] = 'URL для получения данных с API.';
 $_lang['setting_paypanel_api_regru_percent'] = 'Наценка в %';
 $_lang['setting_paypanel_api_regru_percent_desc'] = 'Наценка цен в процентах. Применяется массово.';
+$_lang['setting_paypanel_api_regru_shop_categories'] = 'Категории товаров';
+$_lang['setting_paypanel_api_regru_shop_categories_desc'] = 'ID категорий товаров через запятую.';
 
 $_lang['area_paypanel_api_thesslstore'] = 'API THESSLSTORE.COM';
 

@@ -41,6 +41,11 @@ return [
         'value' => '20',
         'area' => 'paypanel_api_regru',
     ],
+    'api_regru_shop_categories' => [
+        'xtype' => 'textfield',
+        'value' => '',
+        'area' => 'paypanel_api_regru',
+    ],
     'api_thesslstore_username' => [
         'xtype' => 'textfield',
         'value' => '',

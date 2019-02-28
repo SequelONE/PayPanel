@@ -59,6 +59,17 @@ class PayPanelDomainGetListProcessor extends modObjectGetListProcessor
         $array = $object->toArray();
         $array['actions'] = [];
 
+        // Import API REG.RU
+        $array['actions'][] = [
+            'cls' => '',
+            'icon' => 'icon icon-download',
+            'title' => $this->modx->lexicon('paypanel_domain_update'),
+            //'multiple' => $this->modx->lexicon('paypanel_domains_update'),
+            'action' => 'importApiDomain',
+            'button' => true,
+            'menu' => true,
+        ];
+
         // Edit
         $array['actions'][] = [
             'cls' => '',

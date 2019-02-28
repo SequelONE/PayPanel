@@ -141,6 +141,14 @@ $_lang['paypanel_domains_remove'] = 'Удалить услуги';
 $_lang['paypanel_domain_remove_confirm'] = 'Вы уверены, что хотите удалить эту услугу?';
 $_lang['paypanel_domains_remove_confirm'] = 'Вы уверены, что хотите удалить эти услуги?';
 $_lang['paypanel_domain_active'] = 'Включено';
+$_lang['paypanel_domain_inactive'] = 'Выключено';
+$_lang['paypanel_domain_import'] = 'Импорт цен с API REG.RU';
+$_lang['paypanel_domain_import_shop'] = 'Импорт в miniShop2';
+$_lang['paypanel_domain_update_prices'] = 'Обновление цен с API REG.RU';
+$_lang['paypanel_domain_update_minishop'] = 'Обновление цен в miniShop2';
+$_lang['paypanel_action_download'] = 'Загрузить';
+$_lang['paypanel_confirm_download'] = 'Вы уверены, что хотите выполнить загрузку? Текущие данные будут обновлены.';
+
 
 $_lang['paypanel_domain_err_name'] = 'Вы должны указать имя услуги.';
 $_lang['paypanel_domain_err_ae'] = 'Услуга с таким именем уже существует.';

@@ -259,9 +259,48 @@ Ext.extend(PayPanel.grid.Ssls, MODx.grid.Grid, {
 
     getTopBar: function () {
         return [{
-            text: '<i class="icon icon-plus"></i>&nbsp;' + _('paypanel_ssl_create'),
-            handler: this.createSsl,
-            scope: this
+            text: '<i class="icon icon-cogs"></i> ',
+            menu: [{
+                text: '<i class="icon icon-download"></i> ' + _('paypanel_domain_import'),
+                cls: 'paypanel-cogs',
+                handler: this.createSsl,
+                scope: this
+            }, {
+                text: '<i class="icon icon-upload"></i> ' + _('paypanel_domain_update_prices'),
+                cls: 'paypanel-cogs',
+                handler: this.createSsl,
+                scope: this
+            }, '-', {
+                text: '<i class="icon icon-download"></i> ' + _('paypanel_domain_import_shop'),
+                cls: 'paypanel-cogs',
+                handler: this.createSsl,
+                scope: this
+            }, {
+                text: '<i class="icon icon-upload"></i> ' + _('paypanel_domain_update_minishop'),
+                cls: 'paypanel-cogs',
+                handler: this.createSsl,
+                scope: this
+            }, '-', {
+                text: '<i class="icon icon-plus"></i> ' + _('paypanel_domain_create'),
+                cls: 'paypanel-cogs',
+                handler: this.createSsl,
+                scope: this
+            }, {
+                text: '<i class="icon icon-trash-o red"></i> ' + _('paypanel_domain_remove'),
+                cls: 'paypanel-cogs',
+                handler: this.removeSsl,
+                scope: this
+            }, {
+                text: '<i class="icon icon-toggle-on green"></i> ' + _('paypanel_domain_active'),
+                cls: 'paypanel-cogs',
+                handler: this.enableSsl,
+                scope: this
+            }, {
+                text: '<i class="icon icon-toggle-off red"></i> ' + _('paypanel_domain_inactive'),
+                cls: 'paypanel-cogs',
+                handler: this.disableSsl,
+                scope: this
+            }]
         }, '->', {
             xtype: 'paypanel-field-search',
             width: 250,

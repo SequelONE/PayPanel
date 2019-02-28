@@ -57,7 +57,7 @@ PayPanel.combo.Category = function (config) {
         allowBlank: false,
         url: PayPanel.config['connector_url'],
         baseParams: {
-            action: 'mgr/category/getcats',
+            action: 'mgr/domain/getcats',
             combo: true,
             id: config.value
         },
