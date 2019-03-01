@@ -189,7 +189,7 @@ Ext.extend(PayPanel.grid.Domains, MODx.grid.Grid, {
             _('paypanel_confirm_download'),
             function(e) {
                 if (e == 'yes') {
-                    this.setAction('importapi', 'false', 0);
+                    this.setAction('download', 'false', 0);
                 } else {
                     this.fireEvent('cancel');
                 }
@@ -362,21 +362,14 @@ Ext.extend(PayPanel.grid.Domains, MODx.grid.Grid, {
         }
         return this.processEvent('click', e);
     },
-
     setAction: function(method, field, value) {
-        console.log("test");
-        var ids = this._getSelectedIds();
-        if (!ids.length && (field !== 'false')) {
-            return false;
-        }
         MODx.Ajax.request({
             url: PayPanel.config.connector_url,
             params: {
                 action: 'mgr/domain/importapi',
                 method: method,
                 field_name: field,
-                field_value: value,
-                ids: Ext.util.JSON.encode(ids)
+                field_value: value
             },
             listeners: {
                 success: {

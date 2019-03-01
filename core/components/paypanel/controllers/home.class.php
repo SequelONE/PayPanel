@@ -63,10 +63,6 @@ class PayPanelHomeManagerController extends modExtraManagerController
 
         $this->addJavascript(MODX_MANAGER_URL . 'assets/modext/util/datetime.js');
 
-        $this->addJavascript($this->miniShop2->config['jsUrl'] . 'mgr/minishop2.js');
-        $this->addJavascript($this->miniShop2->config['jsUrl'] . 'mgr/misc/ms2.utils.js');
-        $this->addJavascript($this->miniShop2->config['jsUrl'] . 'mgr/misc/ms2.combo.js');
-
         $this->addJavascript($this->PayPanel->config['jsUrl'] . 'mgr/paypanel.js');
         $this->addJavascript($this->PayPanel->config['jsUrl'] . 'mgr/misc/utils.js');
         $this->addJavascript($this->PayPanel->config['jsUrl'] . 'mgr/misc/combo.js');
